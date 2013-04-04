@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+ config.sample.xml
+ 
+ Copyright (C) 2010 Robert Knauer <robert AT fishmixx.de>
+ 
+ This file is part of dirty_fish.
+ 
+ dirty_fish is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published
+ by the Free Software Foundation; version 3 only.
+ 
+ dirty_fish is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with dirty_fish. If not, see <http://www.gnu.org/licenses/>.
+-->
+<config>
+	<common>
+		<!--
+		 Die Verbindungsdaten, über die der lima-Bot per XML-RPC erreichbar sein soll.
+		-->
+		<xmlrpc>
+			<host>127.0.0.1</host>
+			<port>8000</port>
+		</xmlrpc>
+		<!--
+		 Die JIDs und Nicknames der DJs für das Linksystem.
+		-->
+		<DJs>
+			<dj jid="rk-cookies@draugr.de" nick="Robert" />
+			<dj jid="olearose@draugr.de" nick="Oleander" />
+			<dj jid="telelo@draugr.de" nick="Leonard" />
+			<!--<dj jid="cpp-cplusplus@jabber.lima-city.de" nick="Jonas" />-->
+			<dj jid="djfun@draugr.de" nick="Martin" />
+			<dj jid="hax404@draugr.de" nick="Georg" />
+		</DJs>
+		<!--
+		 Die JIDs und Nicknames der Admins für die Admin-Funktionen.
+		-->
+		<admins>
+			<admin jid="rk-cookies@draugr.de" nick="Robert" />
+			<admin jid="robert@verdammung.org" nick="Robert" />
+			<admin jid="cookies@jabber.lima-city.de" nick="Robert" />
+			<admin jid="rookies@jabber.org" nick="Robert" />
+		</admins>
+	</common>
+	<fm-bot>
+		<!--
+		 Die Verbindungsdaten für den fishmixx-Bot (sollte selbsterklärend sein).
+		-->
+		<general>
+			<jid>user@server.tld</jid>
+			<password>**********</password>
+			<resource>dirty_fish v2.0</resource>
+			<room>fishmixx@conference.draugr.de</room>
+			<nick>dirty_fish</nick>
+		</general>
+		<!--
+		 Die Daten für die vCard des fishmixx-Bots (sollte selbsterklärend sein).
+		-->
+		<vcard>
+			<clientName>dirty_fish</clientName>
+			<clientVersion>2.0</clientVersion>
+			<os>Arch Linux</os>
+		</vcard>
+		<messages>
+			<!--<help><![CDATA[dirty_fish 1.0 » Hilfe:
+     • Kommandos im fishmixx-MUC:
+          - !stream
+              ⇒ Streaminfos anzeigen
+          - !sendeplan
+              ⇒ Sendeplan für heute anzeigen (kommt als PN)
+          - !wunsch <dein wunsch>
+              ⇒ Wunsch an den aktuellen DJ schicken (z.B. „!wunsch Shearer - Out of the dark“)
+          - !help
+              ⇒ diese Hilfe anzeigen (kommt als PN)
+          - !bar
+              ⇒ Inhalt der Bar anzeigen
+              WICHTIG: Bei übermäßigem, spamartigen Gebrauch der Bar kann es zu einem Rauswurf aus dem Chat kommen.
+          - !bar <drink>
+              ⇒ Drink bestellen
+          - !bar <drink> <user>
+              ⇒ Drink für einen anderen User bestellen (Info: Das geht nur mit Usern, die wirklich im Chat sind und auch nicht mit deinem eigenen Nick.)
+          - !mumble
+              ⇒ Zugangsdaten zum fishmixx-Mumble anzeigen
+     • Kommandos per PN:
+          - stream
+              ⇒ Streaminfos anzeigen
+          - sendeplan
+              ⇒ Sendeplan für heute anzeigen
+          - help
+              ⇒ diese Hilfe anzeigen
+          - jamsearch <bereich (album, artist, track, tag oder user)> <suchbegriff>
+              ⇒ auf Jamendo suchen
+          - link <link>
+              ⇒ einen Link verteilen (nur für DJs)]]></help>-->
+              <help><![CDATA[
+dirty_fish 2.0 » Hilfe:
+     • Kommandos im fishmixx-MUC:
+          - !stream
+              ⇒ Streaminfos anzeigen
+          - !sendeplan
+              ⇒ Sendeplan für heute anzeigen (kommt als PN)
+          - !help
+              ⇒ diese Hilfe anzeigen (kommt als PN)
+          - !mumble
+              ⇒ Zugangsdaten zum fishmixx-Mumble anzeigen
+          - !mumble <user>
+              ⇒ einen anderen User auf die Zugangsdaten zum fishmixx-Mumble hinweisen
+     • Kommandos per PN:
+          - stream
+              ⇒ Streaminfos anzeigen
+          - sendeplan
+              ⇒ Sendeplan für heute anzeigen
+          - help
+              ⇒ diese Hilfe anzeigen
+          - mumble
+              ⇒ Zugangsdaten zum fishmixx-Mumble anzeigen]]></help>
+			<mumble><![CDATA[
+Zugangsdaten zum Mumble:
+   Adresse: fishmixx.de
+   Port: 2345
+   Passwort: lol
+Tutorial: http://telelo.de/krimskrams/tutorials/fishmixx-mumble/]]></mumble>
+		</messages>
+		<bar>
+			<drink name="beer">
+				<message for="self">/me gives {BY} a beer.</message>
+				<message for="other">/me gives {FOR} a beer with greetings by {BY}.</message>
+			</drink>
+			<drink name="coffee">
+				<message for="self">A great coffee with a bit of cinnamon for {BY}.</message>
+				<message for="other">A great coffee with a bit of cinnamon for {FOR}.</message>
+			</drink>
+			<drink name="wine">
+				<message for="self">A glass wine for {BY}… I hope you'll sleep fine!</message>
+				<message for="other">A wine glass for {FOR}, tested by {BY}…</message>
+			</drink>
+			<drink name="fishwater">
+				<message for="self">A full bucket of fishwater with original piss of fishes goes to {BY}.</message>
+				<message for="other">A full bucket of fishwater with original piss of fishes and {BY} goes to {FOR}.</message>
+			</drink>
+			<drink name="coke">
+				<message for="self">The bottle with fizzy coke for {BY}.</message>
+				<message for="other">One glass coke with a piece of lemon for {FOR}.</message>
+			</drink>
+			<drink name="clubmate">
+				<message for="self">For the best hacker of this world, {BY}, one bottle clubmate!</message>
+				<message for="other">{BY} thinks {FOR} is the best hacker of this world and donates him a bottle of clubmate!</message>
+			</drink>
+		</bar>
+	</fm-bot>
+	<lima-bot>
+		<general>
+			<jid>user@jabber.lima-city.de</jid>
+			<password>*************</password>
+			<resource>dirty_machine lima v2.0</resource>
+			<room>support@conference.jabber.lima-city.de</room>
+			<!--<room>browsergame-game@conference.draugr.de</room>-->
+			<nick>dirty_machine</nick>
+		</general>
+		<vcard>
+			<clientName>dirty_machine lima</clientName>
+			<clientVersion>2.0</clientVersion>
+			<os>Arch Linux</os>
+		</vcard>
+	</lima-bot>
+</config>
